@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none" role="img" aria-label="Profile photo placeholder">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="400" y2="400" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B1120"/>
+      <stop offset="1" stop-color="#1A2744"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="100" y1="80" x2="300" y2="320" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4A7CAB"/>
+      <stop offset="1" stop-color="#2D5A87"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#bg)"/>
+  <circle cx="200" cy="155" r="72" fill="url(#accent)" opacity="0.9"/>
+  <ellipse cx="200" cy="310" rx="110" ry="95" fill="url(#accent)" opacity="0.85"/>
+  <text x="200" y="375" text-anchor="middle" fill="#8FA4BE" font-family="system-ui, sans-serif" font-size="14" letter-spacing="0.08em">REPLACE WITH YOUR PHOTO</text>
+</svg>

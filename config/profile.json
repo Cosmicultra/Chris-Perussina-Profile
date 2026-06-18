@@ -1,0 +1,99 @@
+{
+  "name": "Christopher Perussina",
+  "title": "President, Assured Wealth Advisors",
+  "bio": "Helping families and advisors build lasting wealth through disciplined planning and innovative technology.",
+  "profileImage": "/images/chris-cutout.png",
+  "siteUrl": "https://chrisperussina.com",
+  "featuredCTA": {
+    "label": "Schedule a Conversation",
+    "url": "https://calendly.com/chris-assuredwealthadvisors/phone-conversation",
+    "description": "30-minute introductory call"
+  },
+  "stats": [
+    {
+      "value": "15+",
+      "label": "Years",
+      "description": "More than 15 years in financial services, guiding families and advisors through disciplined wealth planning and long-term strategy."
+    },
+    {
+      "value": "2",
+      "label": "Ventures",
+      "description": "President of Assured Wealth Advisors and founder of AdvisorPilot — one firm for clients, one platform built for the advisors who serve them."
+    },
+    {
+      "value": "AdvisorPilot",
+      "label": "Founder",
+      "description": "Founded AdvisorPilot to give financial advisors modern, AI-powered tools that streamline workflows and elevate the client experience."
+    }
+  ],
+  "compliance": "Information provided is for educational purposes only and does not constitute investment advice. Past performance is not indicative of future results.",
+  "meetingMode": {
+    "qrTarget": "calendly"
+  },
+  "social": [
+    {
+      "platform": "linkedin",
+      "url": "https://www.linkedin.com/in/christopher-perussina-881722105/"
+    },
+    {
+      "platform": "x",
+      "url": "https://x.com/AWAdvisor"
+    },
+    {
+      "platform": "email",
+      "url": "mailto:chris@assuredwealthadvisors.com"
+    },
+    {
+      "platform": "sms",
+      "url": "sms:+19254138100"
+    }
+  ],
+  "linkSections": [
+    {
+      "title": "Assured Wealth Advisors",
+      "brand": "awa",
+      "logo": "/AWA.png",
+      "links": [
+        {
+          "title": "AssuredWealthAdvisors.com",
+          "url": "https://assuredwealthadvisors.com/",
+          "icon": "globe",
+          "image": "/AWA.png"
+        },
+        {
+          "title": "Run Roth Optimizer",
+          "description": "Run Your FREE Roth Conversion Optimizer",
+          "url": "https://roth-conversion-optimizer.vercel.app/",
+          "icon": "chart-step-up",
+          "featured": true,
+          "badge": "Free tool"
+        }
+      ]
+    },
+    {
+      "title": "AdvisorPilot",
+      "brand": "advisorpilot",
+      "logo": "/AP.png",
+      "accent": "muted-gold",
+      "links": [
+        {
+          "title": "Book a Demo",
+          "description": "Book a Free Demo With AdvisorPilot",
+          "url": "https://calendly.com/chris-assuredwealthadvisors/advisorpilot-demo",
+          "icon": "monitor-play"
+        },
+        {
+          "title": "AdvisorPilot.ai",
+          "description": "Learn and Sign up today.",
+          "url": "https://www.advisorpilot.ai/",
+          "icon": "globe",
+          "image": "/AP.png",
+          "imageBackground": "white"
+        }
+      ]
+    }
+  ],
+  "theme": {
+    "accent": "steel-blue"
+  }
+}
