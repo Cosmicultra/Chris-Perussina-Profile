@@ -33,11 +33,11 @@ export function StorySpine() {
         />
         {progress > 0.02 ? (
           <div
-            className="absolute left-1/2 h-2 w-2 -translate-x-1/2 rounded-full animate-spine-dot-pulse"
+            className="spine-dot-pulse absolute left-1/2 h-2 w-2 rounded-full"
             style={{
               top: `calc(${heightPercent}% - 4px)`,
               backgroundColor: dotColor,
-              boxShadow: `0 0 8px 2px ${dotColor}66`,
+              color: dotColor,
             }}
           />
         ) : null}

@@ -33,31 +33,6 @@
   navigation: auto;
 }
 
-@supports (animation-timeline: scroll()) {
-  @keyframes scrollBgParallaxNative {
-    from {
-      translate: 0 0;
-    }
-    to {
-      translate: 0 -12px;
-    }
-  }
-
-  .scroll-bg-root {
-    timeline-scope: --page-scroll;
-  }
-
-  html {
-    scroll-timeline: --page-scroll block;
-  }
-
-  .scroll-bg-awa {
-    animation: scrollBgParallaxNative linear both;
-    animation-timeline: --page-scroll;
-    animation-range: exit 0% exit 100%;
-  }
-}
-
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -77,6 +52,11 @@
   .scroll-bg-root {
     --scroll-bg-scale-boost: 1.2;
   }
+}
+
+.content-auto-section {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 480px;
 }
 
 @layer utilities {
@@ -115,6 +95,54 @@
 
   .animate-cta-icon-breathe {
     animation: ctaIconBreathe 8s ease-in-out infinite;
+  }
+
+  .cta-ambient-breathe {
+    position: relative;
+    isolation: isolate;
+  }
+
+  .cta-ambient-breathe::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    box-shadow: 0 0 24px 2px color-mix(in srgb, var(--accent-active) 25%, transparent);
+    opacity: 0;
+    animation: ctaAmbientGlow 8s ease-in-out infinite;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .cta-icon-breathe {
+    position: relative;
+  }
+
+  .cta-icon-breathe::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: rgba(255, 255, 255, 0.12);
+    opacity: 0;
+    animation: ctaIconGlow 8s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  .spine-dot-pulse {
+    transform: translateX(-50%);
+    animation: spineDotScale 2s ease-in-out infinite;
+  }
+
+  .spine-dot-pulse::after {
+    content: "";
+    position: absolute;
+    inset: -5px;
+    border-radius: 50%;
+    background: currentColor;
+    opacity: 0.35;
+    animation: spineDotGlow 2s ease-in-out infinite;
+    pointer-events: none;
   }
 
   .animate-hero-reveal {
@@ -158,7 +186,7 @@
   }
 
   .animate-spine-dot-pulse {
-    animation: spineDotPulse 2s ease-in-out infinite;
+    animation: spineDotScale 2s ease-in-out infinite;
   }
 }
 
@@ -193,15 +221,47 @@
   }
 }
 
-@keyframes spineDotPulse {
+@keyframes spineDotScale {
   0%,
   100% {
-    box-shadow: 0 0 6px 1px color-mix(in srgb, currentColor 40%, transparent);
     transform: translateX(-50%) scale(1);
   }
   50% {
-    box-shadow: 0 0 12px 4px color-mix(in srgb, currentColor 55%, transparent);
     transform: translateX(-50%) scale(1.15);
+  }
+}
+
+@keyframes spineDotGlow {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.65;
+    transform: scale(1.4);
+  }
+}
+
+@keyframes ctaAmbientGlow {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+}
+
+@keyframes ctaIconGlow {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
   }
 }
 
@@ -218,24 +278,20 @@
 @keyframes ctaAmbientBreathe {
   0%,
   100% {
-    box-shadow:
-      0 10px 15px -3px rgba(0, 0, 0, 0.2),
-      0 0 0 0 color-mix(in srgb, var(--accent-active) 0%, transparent);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
   }
   50% {
-    box-shadow:
-      0 10px 25px -3px rgba(0, 0, 0, 0.25),
-      0 0 24px 2px color-mix(in srgb, var(--accent-active) 25%, transparent);
+    box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.25);
   }
 }
 
 @keyframes ctaIconBreathe {
   0%,
   100% {
-    filter: brightness(1);
+    opacity: 1;
   }
   50% {
-    filter: brightness(1.12);
+    opacity: 1;
   }
 }
 
@@ -255,6 +311,12 @@
 
   .animate-cta-ambient-breathe,
   .animate-cta-icon-breathe {
+    animation: none !important;
+  }
+
+  .cta-ambient-breathe::after,
+  .cta-icon-breathe::after,
+  .spine-dot-pulse::after {
     animation: none !important;
   }
 }

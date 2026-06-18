@@ -39,7 +39,7 @@ export function StickyCTA({ cta }: StickyCTAProps) {
           href={cta.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="group flex min-w-0 flex-1 items-center gap-3 rounded-full border border-white/10 bg-card/90 px-4 py-3 text-foreground shadow-lg shadow-black/30 backdrop-blur-md transition-colors hover:bg-card-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-active)]/40 focus-visible:ring-offset-2 focus-visible:ring-offset-navy sm:mx-auto sm:max-w-sm"
+          className="group flex min-w-0 flex-1 items-center gap-3 rounded-full border border-white/10 bg-card px-4 py-3 text-foreground shadow-lg shadow-black/30 max-sm:backdrop-blur-none sm:bg-card/90 sm:backdrop-blur-md transition-colors hover:bg-card-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-active)]/40 focus-visible:ring-offset-2 focus-visible:ring-offset-navy sm:mx-auto sm:max-w-sm"
           style={{ backgroundColor: "color-mix(in srgb, var(--accent-active) 88%, transparent)" }}
         >
           <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/10">
@@ -57,7 +57,7 @@ export function StickyCTA({ cta }: StickyCTAProps) {
           type="button"
           onClick={dismiss}
           aria-label="Dismiss schedule prompt"
-          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-border bg-card/90 text-muted backdrop-blur-md transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-active)]/40 sm:hidden"
+          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-border bg-card text-muted max-sm:backdrop-blur-none sm:bg-card/90 sm:backdrop-blur-md transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-active)]/40 sm:hidden"
         >
           <X className="h-4 w-4" strokeWidth={1.75} />
         </button>

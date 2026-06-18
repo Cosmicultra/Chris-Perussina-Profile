@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type MouseEvent, type ReactNode } from "react";
+import dynamic from "next/dynamic";
 import { motion, type Variants } from "motion/react";
 import {
   Contact,
@@ -15,11 +16,15 @@ import {
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { XIcon } from "@/components/XIcon";
-import { QRModal } from "@/components/QRModal";
 import type { Profile, SocialPlatform } from "@/lib/profile";
 import { useToast } from "@/lib/toast-context";
 import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
 import { downloadVCard } from "@/lib/vcard";
+
+const QRModal = dynamic(
+  () => import("@/components/QRModal").then((module) => ({ default: module.QRModal })),
+  { ssr: false },
+);
 
 const socialIcons: Record<SocialPlatform, LucideIcon | typeof XIcon> = {
   linkedin: Linkedin,

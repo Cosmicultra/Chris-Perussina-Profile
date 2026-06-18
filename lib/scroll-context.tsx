@@ -1,6 +1,7 @@
 "use client";
 
 import { createContext, useContext, useSyncExternalStore, type ReactNode } from "react";
+import { runScrollVisualEffects } from "@/lib/scroll-visual-effects";
 
 type ScrollSnapshot = {
   scrollY: number;
@@ -18,7 +19,12 @@ function emit() {
 
 export function setScrollSnapshot(next: ScrollSnapshot) {
   snapshot = next;
+  runScrollVisualEffects();
   emit();
+}
+
+export function getScrollSnapshot() {
+  return snapshot;
 }
 
 function subscribe(listener: () => void) {

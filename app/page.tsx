@@ -29,7 +29,10 @@ export default function HomePage() {
 
           <div className="flex flex-col gap-8">
             {profile.linkSections.map((section, index) => (
-              <div key={section.title} className="flex flex-col gap-8">
+              <div
+                key={section.title}
+                className={`flex flex-col gap-8 ${index > 0 ? "content-auto-section" : ""}`}
+              >
                 <LinkSection
                   section={section}
                   sectionIndex={index}

@@ -18,7 +18,7 @@ export function LinkCard({ link }: LinkCardProps) {
       href={link.url}
       target="_blank"
       rel="noopener noreferrer"
-      className={`link-card-shimmer group relative flex items-center gap-4 overflow-hidden rounded-xl border border-border border-white/5 bg-card p-4 backdrop-blur-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-border-hover hover:bg-card-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-active)]/40 focus-visible:ring-offset-2 focus-visible:ring-offset-navy ${
+      className={`link-card-shimmer group relative flex items-center gap-4 overflow-hidden rounded-xl border border-border border-white/5 bg-card p-4 max-sm:bg-card max-sm:backdrop-blur-none sm:backdrop-blur-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-border-hover hover:bg-card-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-active)]/40 focus-visible:ring-offset-2 focus-visible:ring-offset-navy ${
         isFeatured ? "border-l-2 border-l-[var(--accent-active)] shadow-md shadow-black/15" : ""
       }`}
     >

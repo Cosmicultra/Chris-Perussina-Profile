@@ -31,7 +31,7 @@ function StatCell({ stat, index, onSelect, inView }: StatCellProps) {
       onClick={() => onSelect(index)}
       aria-label={`${stat.value} ${stat.label}. Tap for details.`}
       aria-haspopup="dialog"
-      className="rounded-xl border border-border/60 bg-card/40 px-2 py-2.5 backdrop-blur-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-border-hover hover:bg-card/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-active)]/40 focus-visible:ring-offset-2 focus-visible:ring-offset-navy"
+      className="rounded-xl border border-border/60 bg-card px-2 py-2.5 max-sm:bg-card max-sm:backdrop-blur-none sm:bg-card/40 sm:backdrop-blur-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-border-hover hover:bg-card/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-active)]/40 focus-visible:ring-offset-2 focus-visible:ring-offset-navy"
     >
       <p
         className={`font-serif text-lg text-foreground sm:text-xl ${textRevealClass}`}

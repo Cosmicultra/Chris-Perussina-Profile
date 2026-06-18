@@ -8,34 +8,38 @@ import {
   setScrollSnapshot,
 } from "@/lib/scroll-context";
 import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
+import { isCoarsePointerDevice } from "@/hooks/useCoarsePointer";
 
 type ScrollProviderProps = {
   children: ReactNode;
 };
+
+function setupNativeScroll() {
+  const update = () => {
+    setScrollSnapshot({
+      scrollY: window.scrollY,
+      progress: computeScrollProgress(window.scrollY),
+    });
+  };
+
+  update();
+  window.addEventListener("scroll", update, { passive: true });
+  window.addEventListener("resize", update, { passive: true });
+
+  return () => {
+    window.removeEventListener("scroll", update);
+    window.removeEventListener("resize", update);
+  };
+}
 
 export function ScrollProvider({ children }: ScrollProviderProps) {
   const prefersReducedMotion = usePrefersReducedMotion();
   const [lenisEnabled, setLenisEnabled] = useState(false);
 
   useEffect(() => {
-    if (prefersReducedMotion) {
+    if (prefersReducedMotion || isCoarsePointerDevice()) {
       setLenisEnabled(false);
-
-      const update = () => {
-        setScrollSnapshot({
-          scrollY: window.scrollY,
-          progress: computeScrollProgress(window.scrollY),
-        });
-      };
-
-      update();
-      window.addEventListener("scroll", update, { passive: true });
-      window.addEventListener("resize", update, { passive: true });
-
-      return () => {
-        window.removeEventListener("scroll", update);
-        window.removeEventListener("resize", update);
-      };
+      return setupNativeScroll();
     }
 
     const lenis = new Lenis({
